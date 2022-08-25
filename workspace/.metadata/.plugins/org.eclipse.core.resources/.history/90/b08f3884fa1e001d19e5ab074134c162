@@ -1,0 +1,51 @@
+package com.appvenda.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import com.appvenda.models.Cliente;
+
+public class ClienteDAO {
+	private EntityManager em;
+
+	public ClienteDAO(EntityManager em) {
+		this.em = em;
+	}
+
+	public void salvarCliente(Cliente cliente) {
+		getEm().persist(cliente);
+	}
+	
+	public Cliente alterarCliente(Cliente cliente) {
+		return getEm().merge(cliente);
+	}
+	
+	public void excluirCliente(Long id) {
+		Cliente cliente = consultaClienteId(id);
+		getEm().remove(cliente);
+	}
+	
+	public Cliente consultaClienteId(Long id) {
+		return getEm().find(Cliente.class, id);
+	}
+	
+	public List<Cliente> listaCliente(){
+		
+		Query query = getEm()
+				.createQuery("SELECT c FROM Cliente c");
+		
+		
+		return null;
+	}
+	
+	public List<Cliente> listaClienteNome(){
+		return null;
+	}
+
+	public EntityManager getEm() {
+		return em;
+	}
+
+}

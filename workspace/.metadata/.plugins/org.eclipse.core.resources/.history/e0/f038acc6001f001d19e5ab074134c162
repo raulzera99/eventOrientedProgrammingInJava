@@ -1,0 +1,32 @@
+package com.appvenda.services;
+
+import java.util.List;
+
+import com.appvenda.models.Cliente;
+
+public class ClienteService {
+
+	public Cliente salvarCliente() {
+		return null;
+	}
+	
+	public Cliente alterarCliente() {
+		return null;
+	}
+	
+	public void excluirCliente() {
+		
+	}
+	
+	public Cliente consultaClienteId() {
+		return null;
+	}
+	
+	public List<Cliente> listaCliente(){
+		return null;
+	}
+	
+	public List<Cliente> listaClienteNome(){
+		return null;
+	}
+}

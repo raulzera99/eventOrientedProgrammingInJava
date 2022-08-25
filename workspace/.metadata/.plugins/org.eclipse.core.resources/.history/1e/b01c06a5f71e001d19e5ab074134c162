@@ -1,0 +1,12 @@
+package com.appvenda.dao;
+
+import javax.persistence.EntityManager;
+
+public class ClienteDAO {
+	private EntityManager em;
+	
+	public ClienteDAO(EntityManager em) {
+		this.em = em;
+	}
+	
+}
