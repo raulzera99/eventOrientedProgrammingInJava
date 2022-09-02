@@ -1,0 +1,6 @@
+1662030955042	Delete element
+1662030977494	Rename type 'VendasView'
+1662038317835	Extract method 'getClienteFromView'
+1662038529915	Extract method 'getClienteFromDataBase'
+1662039586407	Rename type 'JtableModel'
+1662040648852	Move compilation unit

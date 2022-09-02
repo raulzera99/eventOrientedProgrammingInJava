@@ -1,0 +1,9 @@
+package com.appvenda.view.cliente;
+
+import com.appvenda.models.Cliente;
+import com.appvenda.view.table.JTableModel;
+
+@SuppressWarnings("serial")
+public class TabelaClienteModel extends JTableModel<Cliente>{
+	
+}

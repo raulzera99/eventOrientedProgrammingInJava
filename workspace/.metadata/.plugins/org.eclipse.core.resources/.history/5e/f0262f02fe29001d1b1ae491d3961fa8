@@ -1,0 +1,29 @@
+package com.appvenda.view.table;
+
+import javax.swing.table.AbstractTableModel;
+
+@SuppressWarnings("serial")
+public class JTableModel<T> extends AbstractTableModel{
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public int getRowCount() {
+		
+		return 0;
+	}
+
+	public int getColumnCount() {
+
+		return 0;
+	}
+
+	public Object getValueAt(int rowIndex, int columnIndex) {
+
+		return null;
+	}
+	
+}

@@ -1,0 +1,24 @@
+package com.appvenda.view.table;
+
+import javax.swing.table.AbstractTableModel;
+
+public class JTableModel<T> extends AbstractTableModel{
+	
+	
+
+	public int getRowCount() {
+		
+		return 0;
+	}
+
+	public int getColumnCount() {
+
+		return 0;
+	}
+
+	public Object getValueAt(int rowIndex, int columnIndex) {
+
+		return null;
+	}
+	
+}
