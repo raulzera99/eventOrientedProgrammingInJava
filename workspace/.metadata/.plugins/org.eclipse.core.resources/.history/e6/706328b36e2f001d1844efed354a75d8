@@ -1,0 +1,126 @@
+package com.appvenda.view.cliente;
+
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class TabelaCliente extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txtNomePesquisa;
+	private JTable tabelaCliente;
+	
+	private TabelaClienteModel model;
+	
+	private int linha = 0;
+	private int coluna = 0;
+	private int tamanhoPagina = 10;
+	private int paginaAtual = 0;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TabelaCliente frame = new TabelaCliente();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TabelaCliente() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panelTabela = new JPanel();
+		panelTabela.setBounds(10, 110, 764, 361);
+		contentPane.add(panelTabela);
+		panelTabela.setLayout(null);
+		
+		JScrollPane scrollPanelCliente = new JScrollPane();
+		scrollPanelCliente.setBounds(10, 11, 744, 339);
+		panelTabela.add(scrollPanelCliente);
+		
+		tabelaCliente = new JTable();
+		scrollPanelCliente.setViewportView(tabelaCliente);
+		
+		JPanel panelPesquisa = new JPanel();
+		panelPesquisa.setBounds(10, 11, 764, 88);
+		contentPane.add(panelPesquisa);
+		panelPesquisa.setLayout(null);
+		
+		JLabel lblPesquisa = new JLabel("Nome:");
+		lblPesquisa.setFont(new Font("Verdana", Font.PLAIN, 16));
+		lblPesquisa.setBounds(10, 11, 54, 14);
+		panelPesquisa.add(lblPesquisa);
+		
+		txtNomePesquisa = new JTextField();
+		txtNomePesquisa.setFont(new Font("Verdana", Font.PLAIN, 15));
+		txtNomePesquisa.setBounds(74, 11, 544, 20);
+		panelPesquisa.add(txtNomePesquisa);
+		txtNomePesquisa.setColumns(10);
+		
+		JButton btnPesquisa = new JButton("Pesquisar");
+		btnPesquisa.setFont(new Font("Verdana", Font.PLAIN, 11));
+		btnPesquisa.setBounds(649, 10, 89, 23);
+		panelPesquisa.add(btnPesquisa);
+		
+		JButton btnAdd = new JButton("Add");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAdd.setFont(new Font("Verdana", Font.BOLD, 15));
+		btnAdd.setBounds(20, 482, 105, 68);
+		contentPane.add(btnAdd);
+		
+		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnUpdate.setFont(new Font("Verdana", Font.BOLD, 15));
+		btnUpdate.setBounds(135, 482, 105, 68);
+		contentPane.add(btnUpdate);
+		
+		JButton btnRemove = new JButton("Remover");
+		btnRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnRemove.setFont(new Font("Verdana", Font.BOLD, 15));
+		btnRemove.setBounds(250, 482, 129, 68);
+		contentPane.add(btnRemove);
+		
+		JButton btnConsulta = new JButton("Consultar");
+		btnConsulta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnConsulta.setFont(new Font("Verdana", Font.BOLD, 15));
+		btnConsulta.setBounds(389, 482, 129, 68);
+		contentPane.add(btnConsulta);
+	}
+	
+	
+}

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 
+import com.appvenda.config.Page;
 import com.appvenda.dao.ClienteDAO;
 import com.appvenda.models.Cliente;
 import com.appvenda.persistence.DataBaseConnection;
@@ -108,6 +109,11 @@ public class ClienteService {
 
 	public ClienteDAO getDao() {
 		return dao;
+	}
+
+	public Page<Cliente> listaPaginada(int paginaAtual, int tamanhoPagina) {
+		
+		return dao.listaPaginada(paginaAtual, tamanhoPagina);
 	}
 	
 	

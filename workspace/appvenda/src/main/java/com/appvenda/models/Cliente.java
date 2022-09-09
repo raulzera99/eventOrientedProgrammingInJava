@@ -47,7 +47,7 @@ public class Cliente implements Serializable{
 		this.id = id;
 	}
 
-	@Column(name = "nome", length = 100, nullable = false)
+	@Column(name = "nome", length = 100)
 	public String getNome() {
 		return nome;
 	}
@@ -56,7 +56,7 @@ public class Cliente implements Serializable{
 		this.nome = nome;
 	}
 
-	@Column(name = "endereco",length = 100, nullable = false)
+	@Column(name = "endereco",length = 100)
 	public String getEndereco() {
 		return endereco;
 	}
@@ -65,7 +65,7 @@ public class Cliente implements Serializable{
 		this.endereco = endereco;
 	}
 	
-	@Column(name = "bairro",length = 50, nullable = false)
+	@Column(name = "bairro",length = 50)
 	public String getBairro() {
 		return bairro;
 	}
@@ -74,7 +74,7 @@ public class Cliente implements Serializable{
 		this.bairro = bairro;
 	}
 
-	@Column(name = "cep",length = 20, nullable = false)
+	@Column(name = "cep",length = 20)
 	public String getCep() {
 		return cep;
 	}
@@ -83,7 +83,7 @@ public class Cliente implements Serializable{
 		this.cep = cep;
 	}
 	
-	@Column(name = "email", length = 100, nullable = false)
+	@Column(name = "email", length = 100)
 	public String getEmail() {
 		return email;
 	}
@@ -92,7 +92,7 @@ public class Cliente implements Serializable{
 		this.email = email;
 	}
 
-	@Column(name = "telefone",length = 20, nullable = false)
+	@Column(name = "telefone",length = 20)
 	public String getTelefone() {
 		return telefone;
 	}

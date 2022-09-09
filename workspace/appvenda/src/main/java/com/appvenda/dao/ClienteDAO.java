@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import com.appvenda.config.Page;
 import com.appvenda.models.Cliente;
 
 public class ClienteDAO {
@@ -66,6 +66,32 @@ public class ClienteDAO {
 
 	public EntityManager getEm() {
 		return em;
+	}
+
+	public Page<Cliente> listaPaginada(int paginaAtual, int tamanhoPagina) {
+		List<Cliente> listaCliente = new ArrayList<Cliente>();
+		Page<Cliente> page = new Page<Cliente>();
+		TypedQuery<Cliente> query = getEm()
+				.createQuery("SELECT c FROM Cliente c", Cliente.class);
+		
+		listaCliente = query.setFirstResult(paginaAtual)
+				.setMaxResults(tamanhoPagina)
+				.getResultList();
+		
+		page.setContent(listaCliente);
+		page.setPage(paginaAtual);
+		page.setPageSize(tamanhoPagina);
+		page.setTotalRecords(count().intValue());
+		page.setTotalPage((count().intValue())/tamanhoPagina);
+		
+		return page;
+	}
+	
+	public Long count() {
+		TypedQuery<Long> query = getEm()
+				.createQuery("SELECT COUNT(c) FROM Cliente c", Long.class);
+		Long total = query.getSingleResult();
+		return total;
 	}
 
 }
